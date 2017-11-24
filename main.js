@@ -13,7 +13,7 @@ const defaultConfig = {
     coins: [
         "bitcoin",
         "ethereum",
-        "ripple"
+        "cobinhood"
     ]
 };
 
@@ -75,7 +75,7 @@ function createWindow(config) {
     });
 
     var refresh = () => {
-        fetch('https://api.coinmarketcap.com/v1/ticker/?limit=20')
+        fetch('https://api.coinmarketcap.com/v1/ticker/?limit=200')
         .then((res) => { return res.json(); }
         ).then((json) => { win.setTouchBar(touchBar(json, config.coins)); })
     };
